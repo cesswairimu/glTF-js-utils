@@ -1636,7 +1636,7 @@ function addMaterial(gltf, material) {
         gltfMaterial.doubleSided = true;
     if (material.normalTexture) {
         var normalIndex = addTexture(gltf, material.normalTexture);
-        gltfMaterial.normalTexture = normalIndex;
+        gltfMaterial.normalTexture = { index: normalIndex };
     }
     if (material.pbrMetallicRoughness) {
         if (material.pbrMetallicRoughness.baseColorFactor) {
