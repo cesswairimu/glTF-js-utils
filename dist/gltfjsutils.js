@@ -1634,6 +1634,10 @@ function addMaterial(gltf, material) {
         gltfMaterial.alphaCutoff = material.alphaCutoff;
     if (material.doubleSided)
         gltfMaterial.doubleSided = true;
+    if (material.normalTexture) {
+        var normalIndex = addTexture(gltf, material.normalTexture);
+        gltfMaterial.normalTexture = normalIndex;
+    }
     if (material.pbrMetallicRoughness) {
         if (material.pbrMetallicRoughness.baseColorFactor) {
             gltfMaterial.pbrMetallicRoughness = {};
